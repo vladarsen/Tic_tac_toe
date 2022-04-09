@@ -7,7 +7,6 @@ public class Main {
     private static final CoordinateChecker coordinateChecker = new CoordinateChecker();
     private static final WinChecker winChecker = new WinChecker();
     private static final DrawChecker drawChecker = new DrawChecker();
-    private static final CoordinateValidator coordinateValidator = new CoordinateValidator(0, 2);
     private static final RandomCoordinateScanner randomCoordinateScanner = new RandomCoordinateScanner();
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -59,7 +58,7 @@ public class Main {
         do {
             randomCoordinate = randomCoordinateScanner.scan();
             System.out.println(randomCoordinate);
-        } while (!coordinateChecker.checker(randomCoordinate, field) && coordinateValidator.notValid(randomCoordinate));
+        } while (!coordinateChecker.checker(randomCoordinate, field));
         field.setValue(randomCoordinate.getH(), randomCoordinate.getV(), 'O');
     }
 
